@@ -1,0 +1,30 @@
+{
+  "name": "kisafintech",
+  "version": "1.0.0",
+  "description": "kisafintech",
+  "main": "array.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devAon/kisaFintech.git"
+  },
+  "keywords": [
+    "payment"
+  ],
+  "author": "devAon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devAon/kisaFintech/issues"
+  },
+  "homepage": "https://github.com/devAon/kisaFintech#readme",
+  "dependencies": {
+    "parser": "^0.1.4",
+    "request": "^2.88.0",
+    "xml2js": "^0.4.23"
+  }
+}
