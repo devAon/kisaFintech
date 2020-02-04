@@ -23,6 +23,14 @@
   },
   "homepage": "https://github.com/devAon/kisaFintech#readme",
   "dependencies": {
+    "async-json2csv": "^1.0.4",
+    "crypto-promise": "^2.1.0",
+    "csvtojson": "^2.0.10",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "moment": "^2.24.0",
+    "mysql": "^2.18.1",
     "parser": "^0.1.4",
     "request": "^2.88.0",
     "xml2js": "^0.4.23"
