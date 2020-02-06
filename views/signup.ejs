@@ -135,30 +135,28 @@
                         </div>
                         <div class="form-row no-padding">
                             <i class="fa fa-envelope"></i>
-                            <input type="email" id="userEmail" class="form-element" placeholder="Email"
-                                value="">
+                            <input type="email" id="userEmail" class="form-element" placeholder="Email" value="">
                         </div>
                         <div class="form-row no-padding">
                             <i class="fa fa-lock"></i>
                             <input type="password" id="userPassword" class="form-element" placeholder="Password"
                                 value="">
                         </div>
-                        
-                        <div class="form-row-group with-icons">
-                            <div class="form-row no-padding">
-                                <i class="fa fa-user"></i>
-                                <input type="text" id="userAccessToken" class="form-element" placeholder="accessToken" value="">
-                            </div>
-                            <div class="form-row no-padding">
-                                <i class="fa fa-user"></i>
-                                <input type="text" id="userRefreshToken" class="form-element" placeholder="refreshToken"
-                                    value="">
-                            </div>
-                            <div class="form-row no-padding">
-                                <i class="fa fa-user"></i>
-                                <input type="text" id="userSeqNo" class="form-element" placeholder="userseqno"
-                                    value="">
-                            </div>
+                        <div class="form-row no-padding">
+                            <i class="fa fa-user"></i>
+                            <input type="text" id="userAccessToken" class="form-element" placeholder="accessToken"
+                                value="">
+                        </div>
+                        <div class="form-row no-padding">
+                            <i class="fa fa-user"></i>
+                            <input type="text" id="userRefreshToken" class="form-element" placeholder="refreshToken"
+                                value="">
+                        </div>
+                        <div class="form-row no-padding">
+                            <i class="fa fa-user"></i>
+                            <input type="text" id="userSeqNo" class="form-element" placeholder="userseqno" value="">
+                        </div>
+
                     </div>
 
                     <div class="form-divider"></div>
@@ -174,7 +172,7 @@
 
 
                     <div class="form-row txt-center mt-15">
-                        Already have an account? <a href="login.html" data-loader="show">Login</a>
+                        Already have an account? <a href="/login" data-loader="show">Login</a>
                     </div>
 
                 </div>
@@ -202,11 +200,33 @@
         $("#authBtn").click(function () {
             var tmpWindow = window.open("about:blank");
             tmpWindow.location =
-                "https://testapi.openbanking.or.kr/oauth/2.0/authorize?response_type=code&client_id=q7kH44ThJwjpvNRg0BbJvE1yxvx5X53DKz1rNgPF&redirect_uri=http://localhost:3000/authResult&scope=login inquiry transfer&state=12345678901234567890123456789012&auth_type=0";
+                "https://testapi.openbanking.or.kr/oauth/2.0/authorize?response_type=code&client_id=Ibu8y6lTQk9mgTmUIVhJkwwPD0ZM1axx9Uej73dD&redirect_uri=http://localhost:3000/authResult&scope=login inquiry transfer&state=12345678901234567890123456789012&auth_type=0";
         })
-        $("#signupBtn").click(function(){
-            //6가지 정보 출력 console.log()
-            console.log()
+        $("#signupBtn").click(function () {
+            var userName = $("#userName").val();
+            var userEmail = $("#userEmail").val();
+            var userPassword = $("#userPassword").val();
+            var userAccessToken = $("#userAccessToken").val();
+            var userRefreshToken = $("#userRefreshToken").val();
+            var userSeqNo = $("#userSeqNo").val();
+            $.ajax({
+                url: 'http://localhost:3000/signup',
+                type: 'POST',
+                data: {
+                    userName: userName,
+                    userEmail: userEmail,
+                    userPassword: userPassword,
+                    userAccessToken: userAccessToken,
+                    userRefreshToken: userRefreshToken,
+                    userSeqNo: userSeqNo
+                },
+                success: function (data) {
+                    console.log(data);
+                    if (data == 1) {
+                        alert("가입완료")
+                    }
+                }
+            })
         })
     </script>
 </body>
